@@ -21,7 +21,7 @@ def geocode(s):
     ll = (toponym["Point"]['pos']).split()
     ll1 = (float(ll[0]) + 180) % 360 - 180
     ll2 = (float(ll[1]) + 180) % 360 - 180
-    print(f'bbox={low1},{low2}~{up1},{up2}&l=sat')
+    # print(f'bbox={low1},{low2}~{up1},{up2}&l=sat')
     return f'bbox={low1},{low2}~{up1},{up2}&l=sat&pt={ll1},{ll2},pm2rdl'
     # return f'll={l1},{l2}'
 
@@ -43,3 +43,6 @@ def load_map(param):
         print("Ошибка записи временного файла:", ex)
         sys.exit(2)
     return map_file
+
+# while input() != "0":
+#     load_map(geocode(capitals_europe[random.randint(0, 9)]))
